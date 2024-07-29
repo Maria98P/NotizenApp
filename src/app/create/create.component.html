@@ -1,0 +1,19 @@
+<div class="main">
+    <div class="form-container">
+        <h1>create</h1>
+        <form [formGroup]="notiz" (ngSubmit)="createNotiz()">
+            <input type="text" formControlName="titel" placeholder="Title">
+            <div *ngIf="submitted && notiz.get('titel')?.invalid" class="error-message">
+                Titel ist erforderlich.
+            </div>
+            <textarea formControlName="inhalt" placeholder="Content"></textarea>
+            <div *ngIf="submitted && notiz.get('inhalt')?.invalid" class="error-message">
+                Inhalt ist erforderlich.
+            </div>
+            <input type="submit" value="create">
+            
+        </form>
+    </div>
+</div>
+
+

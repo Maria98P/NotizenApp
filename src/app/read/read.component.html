@@ -1,0 +1,27 @@
+<div class="main text-center">
+  <div *ngIf="isLoading">Loading...
+    <p *ngIf="loadingTime > 5000">There seems to be a problem loading the data.</p>
+  </div>
+  
+  <div *ngIf="notiz && !isLoading">
+    <div *ngIf="!isUpdating" class="card">
+      <h2>Notiz Details</h2>
+      <p> {{ notiz.titel }}</p>
+      <p>{{ notiz.inhalt }}</p>
+      <button class="delete-button" (click)="deleteNotiz(notizId)">Delete</button>
+      <button *ngIf="!isUpdating" class="edit-button" (click)="updateNotiz()">Edit</button>
+      <button class="back-button" routerLink="/list">Back</button>
+    </div> 
+
+  
+    
+
+    <form *ngIf="isUpdating" class="update-form" [formGroup]="updateForm">
+      <label for="titel">Titel:</label>
+      <input type="text" id="titel" formControlName="titel">
+      <label for="inhalt">Inhalt:</label>
+      <textarea id="inhalt" formControlName="inhalt"></textarea>
+      <button type="submit" class="save-button" (click)="saveNotiz()" >Save</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,230 @@
+html {
+  margin-left: 5vw; 
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  animation: gradient-animation 20s ease-in-out infinite;
+  color: #fff;
+  margin-left: 5vw;
+}
+
+header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgba(110, 69, 226, 0.4), rgba(136, 211, 206, 0.4));
+  z-index: -1;
+}
+
+.header-title, .header-subtitle {
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.header-title {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: pop-in 2s ease-out forwards; 
+}
+
+.header-subtitle {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  animation: pop-in 2s ease-out forwards; 
+}
+
+.header-button {
+  animation: pop-in 2s ease-out forwards, bounce 1s ease-in-out infinite;
+}
+
+.button {
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #ff6f61, #de64a4);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.4rem;
+  opacity: 0;
+  animation: fade-in 2s 1s forwards; 
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #de64a4, #ff6f61);
+  transform: scale(1.1);
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main {
+  background: linear-gradient(135deg, #b09cdb, #d8a9e1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5vw;
+}
+
+#image-track-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#image-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.image {
+  height: 80vh;
+  min-width: 100%;
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 10%;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease; 
+}
+
+.image:hover .overlay {
+  opacity: 1; 
+}
+
+.columns-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem 0;
+  gap: 2rem;
+}
+
+.sideTitle, .sideText {
+  flex: 1;
+  padding: 2rem;
+  border-radius: 10px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sideTitle {
+  background: rgba(50, 50, 50, 0.9);
+  animation: slide-in-left 1s ease-out; /* Animation für Hineinschieben von links */
+}
+
+.sideText {
+  background: rgba(100, 100, 100, 0.9);
+  animation: slide-in-right 1s ease-out; /* Animation für Hineinschieben von rechts */
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+p {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 800px;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 2rem 0;
+}
+
+/* Media Query für Bildschirme bis zu 600px*/
+@media (max-width: 600px) {
+  html {
+    margin-left: 0; 
+  }
+
+  .main, header {
+    margin-left: 0;
+  }
+}

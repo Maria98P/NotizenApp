@@ -1,0 +1,154 @@
+.main {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f6d365, #fda085); 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-button,
+.delete-button,
+.back-button {
+  background-color: #f39c12; 
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.edit-button:hover,
+.delete-button:hover,
+.back-button:hover {
+  background-color: #e67e22;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); 
+}
+
+/* Glassmorphism update form */
+.update-form {
+  background: rgba(255, 255, 255, 0.3); 
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.3); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  margin-top: 2rem;
+}
+
+.update-form label {
+  display: block;
+  margin: 0.5rem 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.update-form input[type="text"],
+.update-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5); 
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-size: 1rem;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+}
+
+.update-form input[type="text"]:focus,
+.update-form textarea:focus {
+  background: rgba(255, 255, 255, 0.8); 
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+
+.update-form textarea {
+  height: 120px; 
+  resize: none;
+}
+
+
+.save-button {
+  background-color: #f39c12; 
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.save-button:hover {
+  background-color: #e67e22; 
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.main {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Card styling */
+.card {
+  background: rgba(255, 255, 255, 0.2); /* Glass effect background */
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 600px; 
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+
+.card h2 {
+  margin-bottom: 1.5rem;
+  color: #f39c12; /* Golden-orange for emphasis */
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+/* Card paragraph styling */
+.card p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+
+.card:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); 
+  background: rgba(255, 255, 255, 0.3); 
+}
+/* Media Query für Bildschirme bis zu 1200px*/
+
+@media (max-width: 1200px) {
+  .card {
+    max-width: 40vw;
+    padding: 1.5rem;
+  }
+}
+/* Media Query für Bildschirme bis zu 600px*/
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+    max-width: 95vw;
+  }
+}
