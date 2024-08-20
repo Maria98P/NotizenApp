@@ -1,0 +1,43 @@
+<main class="main text-center">
+  <div *ngIf="isLoading">
+    Lade...
+  </div>
+
+  <div class="controls-container">
+    <div class="sort-container">
+      <select id="sort-select" class="sort-select" (change)="changeSorting($event)">
+        <option value="titel">Nach Titel sortieren</option>
+        <option value="erstellungsdatum">Nach Erstellungsdatum sortieren</option>
+      </select>
+    </div>
+    
+    <div class="search-bar-container" #searchBarContainer>
+      <form (submit)="handleFormSubmit($event, searchInput)">
+        <input #searchInput (input)="search(searchInput.value)" placeholder="Nach Notizen suchen..." />
+        <button class="search-button" type="submit">Suchen</button>
+      </form>
+  
+      <div class="dropdown" [ngClass]="{'open': searchTerm}">
+        <ul *ngIf="filteredNotizen.length">
+          <li *ngFor="let note of filteredNotizen"
+              (click)="handleOptionClick(note.id)"
+              [ngClass]="{'selected': note.id === selectedNoteId}">
+            <h5>{{ note.titel }}</h5>
+            <p *ngIf="note.inhalt.includes(searchTerm)">{{ note.inhalt | slice:0:50 }}...</p>
+          </li>
+        </ul>
+        <div *ngIf="!filteredNotizen.length && searchTerm">
+          <p>Keine Notizen gefunden</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card" *ngFor="let notiz of notizen" [routerLink]="['/read', notiz.id]">
+      <h2>{{ notiz.titel }}</h2>
+      <p class="content">{{ notiz.inhalt }}</p>
+    </div>
+  </div>
+</main>
+

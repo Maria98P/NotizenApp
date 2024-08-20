@@ -1,0 +1,41 @@
+.main {    
+    padding: 1rem;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    min-height: 100vh;
+}
+.form-container {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    max-width: 500px;
+    margin: 2rem auto;
+    color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.form-container input[type="text"],
+.form-container textarea,
+.form-container input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.form-container input[type="submit"] {
+    background: #da7a60;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+   
+}
+
+.form-container input[type="submit"]:hover {
+    background: #eac445;
+}
